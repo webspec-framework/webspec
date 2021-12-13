@@ -6,6 +6,7 @@ Towards Machine-Checked Analysis of Browser Security Mechanisms
 ## Repo Structure
 
 - `model`: Browser Model and Web Invariants
+  - The proofs of our proposed changes to the Web platform are provided in the `{Host,CSP,TT,SW}Invariant.v` files
 - `compiler`: Compiler from Coq to SMT-LIB
 
 ## Running WebSpec
