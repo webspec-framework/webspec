@@ -1783,6 +1783,7 @@ Inductive Reachable (gb: Global) : list Event -> State -> Prop :=
     | _ => True
     end ->
     is_script_in_dom_path gb st_wd pt sc wd_ctx ->
+    is_same_origin_request wd_ctx ((requests gb).[rq_idx]) ->
     st_wk_ = Build_ServiceWorker (S st_vs) ((wk_cache st_wk).[rq_idx] <- rp_idx_opt) ->
 
     Reachable gb (EvScriptUpdateCache pt rq_idx rp_idx_opt :: st_ev) ({{ S st_vs, st_ft, st_wk_, st_wd, st_cj, st_bl, st_sg }})
